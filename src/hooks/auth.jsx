@@ -6,7 +6,7 @@ export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
 
-  async function sigIn({ email, password }) {
+  async function signIn({ email, password }) {
     
     try {
       const response = await api.post("/sessions", { email, password });
@@ -21,7 +21,7 @@ function AuthProvider({ children }) {
   }  
 
   return (
-    <AuthContext.Provider value={{ sigIn  }}>
+    <AuthContext.Provider value={{ signIn  }}>
       {children}
     </AuthContext.Provider>
   )
